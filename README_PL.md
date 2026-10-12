@@ -8,17 +8,13 @@
 
 W kolejnym etapie budowy mojego domowego labu SOC/Blue Team przeszedłem od czystego wdrożenia do praktycznych scenariuszy awaryjnych (Break-Fix). Zamiast idealnych konfiguracji, celowo wprowadzałem błędy i uczyłem się je diagnozować ze stacji roboczej, co pozwala realnie zrozumieć działanie systemów pod maską.
 
-#### 1. Infrastruktura Sieciowa i Tożsamość
-* Serwer DHCP (Windows Server): Skonfigurowano dynamiczny zakres adresów (192.168.10.20–100), zostawiając bezpieczny bufor pod statyczne IP kontrolera (192.168.10.11).
-* Dołączenie do domeny: Pomyślnie spięto maszynę Windows 11 Enterprise z domeną cyberlab.local.
-* Struktura OU: Zaprojektowano logiczny podział na jednostki organizacyjne (IT, HR, Sprzedaż, Admini).
 
-#### 2. GPO Hardening i Diagnozowanie Awarii
+#### 1. GPO Hardening i Diagnozowanie Awarii
 Wdrożono politykę GPO blokującą Wiersz polecenia (CMD) oraz Panel Sterowania dla użytkowników domeny.
 * Break-Fix (Błędny link GPO): Symulacja pomyłki administratora – przypisanie polisy do złego OU. Diagnostyka poprawności nakładania zasad bezpośrednio na kliencie za pomocą narzędzi CLI.
 * Filtrowanie Zabezpieczeń (Security Filtering): Skonfigurowano zaawansowane uprawnienia. Nadano regułę Odmów (Deny) na uprawnieniu Apply Group Policy dla grupy Domain Admins, dzięki czemu administratorzy zyskali "tarczę" chroniącą ich przed restrykcjami.
 
-#### 3. Zarządzanie DNS oraz Metryki Interfejsów (Routing)
+#### 2. Zarządzanie DNS oraz Metryki Interfejsów (Routing)
 Utrzymanie stref wyszukiwania do przodu i wstecz na kontrolerze domeny (obsługa rekordów A, CNAME oraz PTR).
 * Break-Fix (Utrata wzroku DNS): Wstrzyknięcie błędnego DNS-a na karcie klienta i diagnozowanie problemu za pomocą `ipconfig /flushdns` oraz `nslookup dc01.cyberlab.local`.
 * Konflikt w środowisku wirtualnym (Dwie karty sieciowe): Klient posiadał NAT (Internet) oraz sieć wewnętrzną (AD). Windows faworyzował ruch z Internetu, odpytując domowy router o zasoby domeny.
