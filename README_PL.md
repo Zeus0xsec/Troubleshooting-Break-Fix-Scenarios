@@ -5,7 +5,7 @@
 
 ---
 
-#### Moduł 2: Active Directory, GPO i Troubleshooting DNS (Scenariusze Break-Fix)
+#### Active Directory, GPO i Troubleshooting DNS (Scenariusze Break-Fix)
 
 W kolejnym etapie budowy mojego domowego labu SOC/Blue Team przeszedłem od czystego wdrożenia do praktycznych scenariuszy awaryjnych (Break-Fix). Zamiast idealnych konfiguracji, celowo wprowadzałem błędy i uczyłem się je diagnozować ze stacji roboczej, co pozwala realnie zrozumieć działanie systemów pod maską.
 
