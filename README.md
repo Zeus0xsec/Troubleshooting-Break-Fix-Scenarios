@@ -5,7 +5,7 @@
 
 ---
 
-#### Module 2: Active Directory, GPO & DNS Troubleshooting (Break-Fix)
+#### Active Directory, GPO & DNS Troubleshooting (Break-Fix)
 
 In this phase of building my SOC/Blue Team Home Lab, I moved from initial deployment to hands-on "Break-Fix" troubleshooting scenarios. Instead of just setting things up, I deliberately introduced configuration errors and diagnosed them from the client endpoint to master real-world administrative problem-solving.
 
