@@ -1,4 +1,4 @@
-# 🛡️ SOC/Blue Team Home Lab – Active Directory & Troubleshooting
+# SOC/Blue Team Home Lab – Active Directory & Troubleshooting
 
 [![Polish](https://img.shields.io/badge/lang-PL-red.svg)](README_PL.md)
 
